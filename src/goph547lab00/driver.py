@@ -58,3 +58,25 @@ col_data = rock_canyon[:, center_col, :]
 fig, axs = plt.subplots(1, 2, figsize=(12, 5)) 
 
 
+
+
+# subplot for row data 
+axs[0].plot(y, row_data[:, 0], color='red', label='Red') 
+axs[0].plot(y, row_data[:, 1], color='green', label='Green') 
+axs[0].plot(y, row_data[:, 2], color='blue', label='Blue') 
+axs[0].set_title('Row Data at Center Row')
+axs[0].set_xlabel('x-coordinate')
+axs[0].set_ylabel('RGB colour') 
+axs[0].legend() 
+
+# subplot for column data 
+axs[1].plot(x, col_data[:, 0], color='red', label=' Red') 
+axs[1].plot(x, col_data[:, 1], color='green', label=' Green') 
+axs[1].plot(x, col_data[:, 2], color='blue', label=' Blue') 
+axs[1].set_title('Column Data at Center Column')    
+axs[1].set_xlabel('y-coordinate')
+axs[1].set_ylabel('RGB colour') 
+axs[1].legend() 
+
+plt.tight_layout() 
+plt.show()
