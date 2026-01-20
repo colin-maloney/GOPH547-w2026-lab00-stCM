@@ -30,3 +30,4 @@ cross_product = np.cross(array_4, array_5)
 # print("Cross Product of Array 4 and Array 5:\n", cross_product) 
 
 rock_canyon = np.asarray(plt.imread('src/goph547lab00/rock_canyon.jpg'))
+img = plt.imshow(rock_canyon)
