@@ -39,7 +39,8 @@ print("Rock Canyon Image Shape:", rock_canyon_shape)
 
 row, cols, _ = rock_canyon.shape 
 
-center_col = cols // 2  
+center_col = cols // 2   
+center_row = row // 2
 collum_col = center_col - 112 
 
 col_slice = rock_canyon[:, collum_col-10:collum_col + 10, :]
@@ -47,4 +48,13 @@ col_slice = rock_canyon[:, collum_col-10:collum_col + 10, :]
 small_gray_img = np.dot(col_slice[...,:3], [0.2989, 0.5870, 0.1140]) 
 plt.imshow(small_gray_img, cmap='gray')
 plt.show()
+
+y = np.arange(cols) 
+x = np.arange(row) 
+
+row_data = rock_canyon[center_row, :, :] 
+col_data = rock_canyon[:, center_col, :] 
+
+fig, axs = plt.subplots(1, 2, figsize=(12, 5)) 
+
 
