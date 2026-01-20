@@ -33,4 +33,13 @@ cross_product = np.cross(array_4, array_5)
 
 rock_canyon = np.asarray(Image.open('src/goph547lab00/rock_canyon.jpg'))
 img = plt.imshow(rock_canyon)
+plt.show() 
+rock_canyon_shape = rock_canyon.shape 
+print("Rock Canyon Image Shape:", rock_canyon_shape) 
+
+row, cols, _ = rock_canyon.shape 
+
+cropped = rock_canyon[int(row/4):int(3*row/4), int(cols/4):int(3*cols/4)]
+small_gray_img = np.dot(cropped[...,:3], [0.2989, 0.5870, 0.1140]) 
+plt.imshow(small_gray_img, cmap='gray')
 plt.show()
