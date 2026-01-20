@@ -85,4 +85,6 @@ axs[1].set_ylabel('RGB colour')
 axs[1].legend() 
 
 plt.tight_layout() 
-plt.show()
+plt.show() 
+
+savefigure = fig.savefig('examples/rock_canyon_RGB_summary.png')
