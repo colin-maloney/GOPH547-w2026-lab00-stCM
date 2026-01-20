@@ -1,5 +1,7 @@
+from PIL import Image 
 import numpy as np 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
+
 
 array_1 = np.ones((3, 5)) 
 
@@ -29,6 +31,6 @@ cross_product = np.cross(array_4, array_5)
 # print("Dot Product of Array 4 and Array 5:\n", dot_product) 
 # print("Cross Product of Array 4 and Array 5:\n", cross_product) 
 
-rock_canyon = np.asarray(plt.imread('src/goph547lab00/rock_canyon.jpg'))
-img = plt.imshow(rock_canyon) 
-print(img)
+rock_canyon = np.asarray(Image.open('src/goph547lab00/rock_canyon.jpg'))
+img = plt.imshow(rock_canyon)
+plt.show()
