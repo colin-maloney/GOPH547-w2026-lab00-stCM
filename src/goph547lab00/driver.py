@@ -52,27 +52,33 @@ plt.show()
 y = np.arange(cols) 
 x = np.arange(row) 
 
-row_data = rock_canyon[center_row, :, :] 
-col_data = rock_canyon[:, center_col, :] 
+mean_R_x = rock_canyon[:, :, 0].mean(axis=0) 
+mean_G_x = rock_canyon[:, :, 1].mean(axis=0) 
+mean_B_x = rock_canyon[:, :, 2].mean(axis=0) 
+mean_RBG_x = rock_canyon.mean(axis=2).mean(axis=0) 
+
+mean_R_y = rock_canyon[:, :, 0].mean(axis=1) 
+mean_G_y = rock_canyon[:, :, 1].mean(axis=1) 
+mean_B_y = rock_canyon[:, :, 2].mean(axis=1) 
+mean_RBG_y = rock_canyon.mean(axis=2).mean(axis=1)
 
 fig, axs = plt.subplots(1, 2, figsize=(12, 5)) 
 
-
-
-
 # subplot for row data 
-axs[0].plot(y, row_data[:, 0], color='red', label='Red') 
-axs[0].plot(y, row_data[:, 1], color='green', label='Green') 
-axs[0].plot(y, row_data[:, 2], color='blue', label='Blue') 
+axs[0].plot(y, mean_R_x, color='red', label='Red') 
+axs[0].plot(y, mean_G_x, color='green', label='Green') 
+axs[0].plot(y, mean_B_x, color='blue', label='Blue')  
+axs[0].plot(y, mean_RBG_x, color='black', label='Mean RGB')
 axs[0].set_title('Row Data at Center Row')
 axs[0].set_xlabel('x-coordinate')
 axs[0].set_ylabel('RGB colour') 
 axs[0].legend() 
 
 # subplot for column data 
-axs[1].plot(x, col_data[:, 0], color='red', label=' Red') 
-axs[1].plot(x, col_data[:, 1], color='green', label=' Green') 
-axs[1].plot(x, col_data[:, 2], color='blue', label=' Blue') 
+axs[1].plot(x, mean_R_y, color='red', label=' Red') 
+axs[1].plot(x, mean_G_y, color='green', label=' Green') 
+axs[1].plot(x, mean_B_y, color='blue', label=' Blue') 
+axs[1].plot(x, mean_RBG_y, color='black', label=' Mean RGB')
 axs[1].set_title('Column Data at Center Column')    
 axs[1].set_xlabel('y-coordinate')
 axs[1].set_ylabel('RGB colour') 
