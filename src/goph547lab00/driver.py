@@ -39,7 +39,12 @@ print("Rock Canyon Image Shape:", rock_canyon_shape)
 
 row, cols, _ = rock_canyon.shape 
 
-cropped = rock_canyon[int(row/4):int(3*row/4), int(cols/4):int(3*cols/4)]
-small_gray_img = np.dot(cropped[...,:3], [0.2989, 0.5870, 0.1140]) 
+center_col = cols // 2  
+collum_col = center_col - 112 
+
+col_slice = rock_canyon[:, collum_col-10:collum_col + 10, :]
+
+small_gray_img = np.dot(col_slice[...,:3], [0.2989, 0.5870, 0.1140]) 
 plt.imshow(small_gray_img, cmap='gray')
 plt.show()
+
