@@ -1,7 +1,7 @@
 from PIL import Image 
 import numpy as np 
 import matplotlib.pyplot as plt 
-from GOPH547lab00.arrays import (square_ones, )  
+from goph547lab00.arrays import square_ones  
 
 def main(): 
     # test creating square array of ones
